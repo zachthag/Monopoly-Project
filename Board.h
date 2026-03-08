@@ -14,6 +14,9 @@ class Board {
 public:
     Board();
 
+    bool addSpace(const Space& s);
+
+
 private:
     Node* head;
     Node* tail;
