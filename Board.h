@@ -19,6 +19,8 @@ public:
 
     int addMany (const std::vector<Space>& spaces);
 
+    int getGoPasses() const;
+
     void move(int steps);
 
     void printFromCurrent(int count) const;

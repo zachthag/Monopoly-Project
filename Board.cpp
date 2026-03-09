@@ -97,3 +97,7 @@ std::string Board::currentName() const {
     }
     return player->data.name;
 }
+
+int Board::getGoPasses() const {
+    return goPasses;
+}
