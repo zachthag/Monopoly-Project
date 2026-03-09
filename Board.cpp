@@ -15,8 +15,31 @@ bool Board::addSpace(const Space& s) {
 
     if (size == 40)
         return false;
+    if (size == 0) {
 
-    head = new Node();
-    head->next = head;
-    head->data = s;
+        head = new Node();
+
+        head->next = head;
+        head->data = s;
+
+        tail = head;
+
+        size++;
+        return true;
+
+    }
+    else {
+
+        Node* newNode = new Node();
+
+        newNode->data = s;
+
+        tail->next = newNode;
+        tail = newNode;
+        tail->next = head;
+
+        size++;
+        return true;
+
+    }
 }
