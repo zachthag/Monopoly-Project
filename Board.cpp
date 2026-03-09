@@ -6,9 +6,13 @@
 
 
 Board::Board() {
+
     head = nullptr;
     tail = nullptr;
     size = 0;
+
+    player = nullptr;
+    goPasses = 0;
 }
 
 bool Board::addSpace(const Space& s) {
@@ -23,6 +27,8 @@ bool Board::addSpace(const Space& s) {
         head->data = s;
 
         tail = head;
+
+        player = head;
 
         size++;
         return true;
@@ -42,4 +48,19 @@ bool Board::addSpace(const Space& s) {
         return true;
 
     }
+}
+
+
+int Board::addMany(const std::vector<Space> &spaces) {
+    int added = 0;
+
+    for (int i = 0; i < spaces.size(); i++) {
+        if (addSpace(spaces.at(i))) {
+            added++;
+        }
+        else {
+            break;
+        }
+    }
+    return added;
 }
