@@ -23,6 +23,8 @@ public:
 
     void printFromCurrent(int count) const;
 
+    std::string currentName() const;
+
 private:
     Node* head;
     Node* tail;

@@ -86,7 +86,14 @@ void Board::printFromCurrent(int count) const {
 
     for (int i = 0; i < count; i++) {
 
-        std::cout << temp->data.name;
+        std::cout << temp->data.name << "\n";
         temp = temp->next;
     }
+}
+
+std::string Board::currentName() const {
+    if (player == nullptr) {
+        return "EMPTY";
+    }
+    return player->data.name;
 }
