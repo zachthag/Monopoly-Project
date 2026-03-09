@@ -1,7 +1,6 @@
 
 #include <iostream>
 #include <string>
-
 #include "Board.h"
 
 
@@ -63,4 +62,31 @@ int Board::addMany(const std::vector<Space> &spaces) {
         }
     }
     return added;
+}
+
+void Board::move(int steps) {
+    if (player == nullptr) {
+        return;
+    }
+    for (int i = 0; i < steps; i++) {
+        player = player->next;
+
+        if (player == head) {
+            goPasses++;
+        }
+    }
+}
+
+void Board::printFromCurrent(int count) const {
+    if (player == nullptr) {
+        return;
+    }
+
+    Node* temp = player;
+
+    for (int i = 0; i < count; i++) {
+
+        std::cout << temp->data.name;
+        temp = temp->next;
+    }
 }

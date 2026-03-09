@@ -19,6 +19,9 @@ public:
 
     int addMany (const std::vector<Space>& spaces);
 
+    void move(int steps);
+
+    void printFromCurrent(int count) const;
 
 private:
     Node* head;
@@ -29,5 +32,7 @@ private:
     int goPasses;
 
 };
+
+
 
 #endif //MONOPOLY_PROJECT_ASSIGNMENT_BOARD_H

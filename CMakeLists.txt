@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(Monopoly_Project_Assignment main.cpp
         Board.cpp
         Space.h
-        Board.h)
+        Board.h
+        Board.cpp)
